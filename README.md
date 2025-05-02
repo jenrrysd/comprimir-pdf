@@ -1,5 +1,5 @@
 # comprimir-pdf
-Comprimir pdf a un 60% de su peso actual
+Esta aplicación ayuda comprimir un PDF a un 60% de su peso actual.
 
 ## Requisitos:
 - sudo apt install ghostscript
