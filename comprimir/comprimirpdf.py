@@ -16,11 +16,11 @@ def comprimir_pdf():
     # Obtener la ruta del archivo original
     directorio = os.path.dirname(input_pdf)
 
-    # Generar nombre de salida único
-    counter = 1
-    while os.path.exists(os.path.join(directorio,f"documento{counter}.pdf")):
-        counter += 1
-        output_pdf = os.path.join(directorio,f"documento{counter}.pdf")
+    nombre_base = os.path.splitext(os.path.basename(input_pdf))[0]  # Obtener nombre sin extensión
+    extension = os.path.splitext(input_pdf)[1]  # Obtener extensión (.pdf)
+
+    # Generar nombre de salida manteniendo el original y agregando "_copia"
+    output_pdf = os.path.join(directorio, f"{nombre_base}_copia{extension}")
 
     # Ejecutar Ghostscript
     try:
@@ -74,7 +74,7 @@ etiqueta = tk.Label(
     root,
     text="Esta aplicación reduce un 60% \n del peso original del documento",
     font=("Arial", 9),
-    fg="gray",
+    fg="black",
     pady=10
 )
 etiqueta.pack()
